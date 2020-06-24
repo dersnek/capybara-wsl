@@ -16,8 +16,8 @@ module Capybara
     end
 
     def self.save_and_open_screenshot(path = nil, **options)
-      Capybara.current_session.save_screenshot(path, options).tap do |p_path|
-        wsl_path = modify_path(p_path)
+      Capybara.current_session.save_screenshot(path, options).tap do |s_path|
+        wsl_path = modify_path(s_path)
         Capybara.current_session.send(:open_file, wsl_path)
       end
     end
