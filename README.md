@@ -1,4 +1,4 @@
- CapybaraWSL gem
+ CapybaraWSL
 =======================
 
 #### Allows you use open saved pages from WSL
@@ -29,5 +29,7 @@ Simply use
  `Capybara::WSL.save_and_open_page` or
  `Capybara::WSL.save_and_open_screenshot` in those places, where you want to save and open page/screenshot, just as you would normally do.
 
-#### Currently only supports Ubuntu
-I'll add a config option for other WSL distros soon.
+CapybaraWSL converts page/screenshot path to WSL Ubuntu path by default. If you have another distro, please set the `distro` setting `Capybara::WSL.distro = :debian` to whichever distro you are using.
+You can look up available distro keys in `Capybara::WSL::DISTROS`. You can also set `distro` to a string with exact folder name of your distro `Capybara::WSL.distro = "openSUSE-Leap-15-1"`.
+
+Please tell me if some of those distro folder names in `Capybara::WSL::DISTROS` are incorrect, I don't really have a way to check it.

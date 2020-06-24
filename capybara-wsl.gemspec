@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "capybara-wsl"
-  s.version     = "0.0.1"
+  s.version     = "0.1.0"
   s.date        = "2020-06-24"
   s.summary     = "WSL support for Capybara"
   s.description = "Allows Capybara to open pages/screenshots in Windows browsers via Launchy."
