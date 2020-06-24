@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "capybara-wsl"
-  s.version     = "0.1.0"
+  s.version     = "0.1.1"
   s.date        = "2020-06-24"
   s.summary     = "WSL support for Capybara"
   s.description = "Allows Capybara to open pages/screenshots in Windows browsers via Launchy."
@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/dersnek/capybara-wsl"
   s.license     = "MIT"
 
-  s.add_runtime_dependency "capybara", "~> 2.0"
-  s.add_dependency "launchy"
+  s.add_runtime_dependency "capybara", ">= 2.0"
+  s.add_runtime_dependency "launchy", ">= 2.0"
 end
