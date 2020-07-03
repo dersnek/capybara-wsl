@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "capybara"
-require "capybara/wsl/distros"
+require_relative "wsl/distros"
 
 module Capybara
   module WSL

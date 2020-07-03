@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-require "capybara/wsl"
+require_relative "capybara/wsl"
