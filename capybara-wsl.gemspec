@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |s|
   s.name        = "capybara-wsl"
-  s.version     = "0.1.2"
+  s.version     = "0.1.3"
   s.date        = "2020-06-24"
   s.summary     = "WSL support for Capybara"
   s.description = "Allows Capybara to open pages/screenshots in Windows browsers via Launchy."
   s.authors     = ["Mark Tityuk"]
   s.email       = "mark.tityuk@gmail.com"
-  s.files       = ["lib/capybara-wsl.rb"]
+  s.files       = `git ls-files`.split("\n")
   s.homepage    = "https://github.com/dersnek/capybara-wsl"
   s.license     = "MIT"
 
