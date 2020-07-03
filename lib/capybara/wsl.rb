@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require "capybara"
+require "capybara/dsl"
 require_relative "wsl/distros"
+require_relative "wsl/dsl"
 
 module Capybara
   module WSL
@@ -48,3 +50,6 @@ module Capybara
     end
   end
 end
+
+# Add WSL-relared methods to Capybara's DSL
+Capybara::DSL.include Capybara::WSL::DSL

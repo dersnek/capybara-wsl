@@ -26,15 +26,15 @@ export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 
 ### Usage
 Simply use
- `Capybara::WSL.save_and_open_page` or
- `Capybara::WSL.save_and_open_screenshot` in those places, where you want to save and open page/screenshot, just as you would normally do.
+ `save_and_open_page_wsl` or
+ `save_and_open_screenshot_wsl` instead of their normal versions.
 
  If you installed via `gem install`:
  Run `gem which capybara-wsl` in your console and copy output.
  Use as:
  ```
  require "copied output"
- Capybara::WSL.save_and_open_page
+ save_and_open_page_wsl
  ```
 
 CapybaraWSL converts page/screenshot path to WSL Ubuntu path by default. If you have another distro, please set the `distro` setting `Capybara::WSL.distro = :debian` to whichever distro you are using.
