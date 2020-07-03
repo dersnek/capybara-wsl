@@ -34,7 +34,8 @@ Simply use
  Use as:
  ```
  require "copied output"
- save_and_open_page_wsl
+ Capybara::WSL.save_and_open_page
+ Capybara::WSL.save_and_open_screenshot
  ```
 
 CapybaraWSL converts page/screenshot path to WSL Ubuntu path by default. If you have another distro, please set the `distro` setting `Capybara::WSL.distro = :debian` to whichever distro you are using.
