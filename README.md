@@ -10,11 +10,11 @@ This gem modifies that path to include `wsl$` part so that it's understandable f
 ### Installation
 In your `Gemfile` add:
 ```
-gem "capybara-wsl", git: "git@github.com:dersnek/capybara-wsl.git"
+gem "capybara-wsl"
 ```
 Then run `bundle install`.
 
-Or via [specific_install](https://github.com/rdp/specific_install) gem if you don't want to clutter your `Gemfile`.
+Or `gem install capybara-wsl`, but then running it is a bit less straightforward.
 
 ### Important note
 In order for it to work, you have to add `$BROWSER` env variable.
