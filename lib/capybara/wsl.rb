@@ -40,7 +40,7 @@ module Capybara
     private
 
     def self.modify_path(path)
-      path.gsub "/home/", "file://///wsl$/#{distro_folder_name}/home/"
+      path.prepend("file://///wsl$/#{distro_folder_name}")
     end
 
     def self.distro_folder_name
