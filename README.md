@@ -1,5 +1,6 @@
  CapybaraWSL
 =======================
+[![Gem Version](https://badge.fury.io/rb/capybara-wsl.svg)](https://badge.fury.io/rb/capybara-wsl)
 
 #### Allows you use open saved pages from WSL
 
