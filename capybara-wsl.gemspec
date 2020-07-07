@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
+$:.push File.expand_path("../lib", __FILE__)
+require "capybara/wsl/version"
+
 Gem::Specification.new do |s|
   s.name        = "capybara-wsl"
-  s.version     = "0.2.0"
-  s.date        = "2020-06-24"
-  s.summary     = "WSL support for Capybara"
+  s.version     = Capybara::WSL::VERSION
+  s.summary     = "Open pages/screenshots in WSL from Capybara"
   s.description = "Allows Capybara to open pages/screenshots in Windows browsers via Launchy."
   s.authors     = ["Mark Tityuk"]
   s.email       = "mark.tityuk@gmail.com"
