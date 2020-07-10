@@ -1,12 +1,12 @@
- CapybaraWSL
+ capybara-wsl
 =======================
 [![Gem Version](https://badge.fury.io/rb/capybara-wsl.svg)](https://badge.fury.io/rb/capybara-wsl)
 
 #### Allows you use open saved pages from WSL
 
-Capybara's `save_and_open_page` and `save_and_open_screenshot` methods don't work properly in WSL. It saves pages/screenshots, but when it tries to open them via Launchy, it passes Linux path, which obviously wouldn't work in Windows browsers.
+Capybara's `save_and_open_page` and `save_and_open_screenshot` methods don't work properly in WSL. Capybara saves pages/screenshots, but then it tries to open them via Launchy and there are several problems with that. We don't want to mess with GUI on WSL, we just want to open them in a Windows browser. However, Capybara passes a Linux path to Launchy, which obviously wouldn't work in Windows browsers.
 
-This gem modifies that path to include `wsl$` part so that it's understandable for Windows browsers.
+This gem modifies that path to include `wsl$` part so that it's understandable for Windows browsers. It automatically detects your current WSL distro (since version 0.3.0).
 
 ### Installation
 In your `Gemfile` add:
@@ -28,7 +28,7 @@ export BROWSER="'/mnt/c/Program Files/Mozilla Firefox/firefox.exe'"
 ### Usage
 Simply use
  `save_and_open_page_wsl` or
- `save_and_open_screenshot_wsl` instead of their normal versions.
+ `save_and_open_screenshot_wsl` instead of their normal versions. You can use same arguments.
 
  If you installed via `gem install`:
  Run `gem which capybara-wsl` in your console and copy output.
@@ -38,8 +38,3 @@ Simply use
  Capybara::WSL.save_and_open_page
  Capybara::WSL.save_and_open_screenshot
  ```
-
-CapybaraWSL converts page/screenshot path to WSL Ubuntu path by default. If you have another distro, please set the `distro` setting `Capybara::WSL.distro = :debian` to whichever distro you are using.
-You can look up available distro keys in `Capybara::WSL::DISTROS`. You can also set `distro` to a string with exact folder name of your distro `Capybara::WSL.distro = "openSUSE-Leap-15-1"`.
-
-Please tell me if some of those distro folder names in `Capybara::WSL::DISTROS` are incorrect, I don't really have a way to check it.
