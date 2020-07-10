@@ -3,10 +3,12 @@
 require "capybara"
 require "capybara/dsl"
 require_relative "wsl/dsl"
-require_relative "wsl/path"
 
 module Capybara
   module WSL
+    class CapybaraWSLError < StandardError; end
+    class CannotDetectWSLPath < CapybaraWSLError; end
+
     def self.save_and_open_page(path = nil)
       Capybara.current_session.save_page(path).tap do |s_path|
         open_file(s_path)
@@ -27,7 +29,18 @@ module Capybara
     end
 
     def self.modify_path(path)
-      path.prepend(Path.get)
+      path.prepend(detect_path)
+    end
+
+    def self.detect_path
+      path = `wslpath -m "/"`&.strip
+
+      if path.empty?
+        raise(Capybara::WSL::CannotDetectWSLPath,
+          "Cannot detect WSL path. Are you sure you're running WSL?")
+      end
+
+      "file:///#{path}"
     end
   end
 end
