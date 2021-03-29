@@ -16,4 +16,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency "capybara", ">= 2.0"
   s.add_dependency "launchy", ">= 2.0"
+  s.add_dependency "dotenv"
 end

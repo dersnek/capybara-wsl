@@ -17,14 +17,6 @@ Then run `bundle install`.
 
 Or `gem install capybara-wsl`, but then running it is a bit less straightforward.
 
-### Important note
-In order for it to work, you have to add `$BROWSER` env variable.
-###### Example for Firefox
-In your `.bashrc` add (notice the quotes):
-```
-export BROWSER="'/mnt/c/Program Files/Mozilla Firefox/firefox.exe'"
-```
-
 ### Usage
 Simply use
  `save_and_open_page_wsl` or

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require "capybara"
+require "dotenv"
+require "launchy"
 require "capybara/dsl"
 require_relative "wsl/dsl"
 
@@ -24,12 +25,15 @@ module Capybara
     private
 
     def self.open_file(path)
+      Dotenv.overload!(File.expand_path("#{__FILE__}/../.env"))
       wsl_path = modify_path(path)
-      Capybara.current_session.send(:open_file, wsl_path)
+      Launchy.open(wsl_path)
+    rescue LoadError
+      warn "File saved to #{wsl_path}.\nPlease install the launchy gem to open the file automatically."
     end
 
     def self.modify_path(path)
-      path.prepend(detect_path)
+      path[1..-1].prepend(detect_path).gsub("/", "\\")
     end
 
     def self.detect_path
@@ -40,10 +44,10 @@ module Capybara
           "Cannot detect WSL path. Are you sure you're running WSL?")
       end
 
-      "file:///#{path}"
+      "file:#{path}"
     end
   end
 end
 
-# Add WSL-relared methods to Capybara's DSL
+# Add WSL-related methods to Capybara's DSL
 Capybara::DSL.include Capybara::WSL::DSL
