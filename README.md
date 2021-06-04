@@ -20,14 +20,15 @@ Or `gem install capybara-wsl`, but then running it is a bit less straightforward
 
 ### Usage
 Simply use
- `save_and_open_page_wsl` or
- `save_and_open_screenshot_wsl` instead of their normal versions. You can use same arguments.
+```
+save_and_open_page_wsl
+save_and_open_screenshot_wsl
+```
+instead of their normal versions. You can use same arguments.
 
- If you installed via `gem install`:
- Run `gem which capybara-wsl` in your console and copy output.
- Use as:
- ```
- require "copied output"
- Capybara::WSL.save_and_open_page
- Capybara::WSL.save_and_open_screenshot
- ```
+If you installed via `gem install`, run `gem which capybara-wsl` in your console and copy output. Use as:
+```
+require "copied output"
+Capybara::WSL.save_and_open_page
+Capybara::WSL.save_and_open_screenshot
+```
