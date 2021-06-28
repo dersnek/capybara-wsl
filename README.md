@@ -26,9 +26,9 @@ save_and_open_screenshot_wsl
 ```
 instead of their normal versions. You can use same arguments.
 
-If you installed via `gem install`, run `gem which capybara-wsl` in your console and copy output. Use as:
+If you installed via `gem install`, use as:
 ```
-require "copied output"
+require `gem which capybara-wsl`.strip
 Capybara::WSL.save_and_open_page
 Capybara::WSL.save_and_open_screenshot
 ```
