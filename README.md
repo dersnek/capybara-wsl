@@ -9,7 +9,7 @@ Capybara's `save_and_open_page` and `save_and_open_screenshot` methods don't wor
 This gem modifies that path to include `wsl$` part so that it's understandable for Windows and opens it in your default browser. It automatically detects your current WSL distro (since version 0.3.0).
 There's no need to manually set the `BROWSER` env variable since version 1.0.0.
 
-### Installation
+## Installation
 In your `Gemfile` add:
 ```
 gem "capybara-wsl"
@@ -18,7 +18,7 @@ Then run `bundle install`.
 
 Or `gem install capybara-wsl`, but then running it is a bit less straightforward.
 
-### Usage
+## Usage
 Simply use
 ```
 save_and_open_page_wsl
