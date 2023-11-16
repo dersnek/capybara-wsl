@@ -8,7 +8,7 @@ module Capybara
       end
 
       def save_and_open_screenshot_wsl(path = nil, **options)
-        Capybara::WSL.save_and_open_screenshot(path, options)
+        Capybara::WSL.save_and_open_screenshot(path, **options)
       end
     end
   end
