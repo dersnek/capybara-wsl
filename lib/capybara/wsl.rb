@@ -33,11 +33,11 @@ module Capybara
         warn "File saved to #{wsl_path}.\nPlease install the launchy gem to open the file automatically."
       end
 
-      def self.modify_path(path)
+      def modify_path(path)
         path[1..-1].prepend(detect_path).gsub("/", "\\")
       end
 
-      def self.detect_path
+      def detect_path
         path = `wslpath -m "/"`&.strip
 
         if path.empty?
